@@ -25,3 +25,10 @@ detector = HandDetector(detectionCon=0.8, maxHands=2)
 pattern = []
 raikiri = ['ox', 'hare', 'monkey']
 earthwal = ['tiger', 'dog', 'ox', 'horse', 'hare', 'tiger', 'boar', 'serpent']
+
+
+# start video
+while True:
+    success, img = cap.read()
+     
+    hands, img = detector.findHands(img)
