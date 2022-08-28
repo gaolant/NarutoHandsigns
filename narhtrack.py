@@ -29,6 +29,20 @@ earthwal = ['tiger', 'dog', 'ox', 'horse', 'hare', 'tiger', 'boar', 'serpent']
 
 # start video
 while True:
+    
+    #import images
     success, img = cap.read()
      
     hands, img = detector.findHands(img)
+    
+    if len(hands) == 2 and signDoing == False:
+        hand1 = hands[0]
+        hand2 = hands[1]
+        lmListh1 = hand1['lmList']
+        lmListh2 = hand2['lmList']
+
+        # print(lmListh1[0][0])
+        # print(lmListh2[0][0])
+
+        fingersh1 = detector.fingersUp(hand1)
+        fingersh2 = detector.fingersUp(hand2)
